@@ -6,7 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	6d766c4f4a02c22e9b35da58af480b37
+# Source0-md5:	d67e8e355070ded001b0f2984efd8b28
 Patch0:		%{name}-desktop.patch
 Patch1:		%{name}-locale_names.patch
 URL:		http://ximian.com/apps/redcarpet.php3
