@@ -10,6 +10,7 @@ Group:		X11/Applications
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
 # Source0-md5:	715a37461a862c72179001690f9884fe
 Patch0:		%{name}-python-version.patch
+Patch1:		%{name}-desktop.patch
 URL:		http://ximian.com/apps/redcarpet.php3
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	python-pygtk-devel >= 2.0.0
@@ -28,6 +29,7 @@ Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 %prep
 %setup -q -n %{name}
 %patch0 -p1
+%patch1 -p1
 
 %build
 glib-gettextize
