@@ -1,13 +1,10 @@
-
-# TODO : building, but not working... python guru need
-
 %define		snap	20030914
 
 Summary:	Software update utility and manager
 Summary(pl):	Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 Name:		red-carpet
 Version:	2.0.3
-Release:	%{snap}.0.1
+Release:	%{snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
@@ -33,11 +30,8 @@ Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 %patch0 -p1
 
 %build
-#touch aclocal.m4
 glib-gettextize
-#chmod u+w aclocal.m4
 %{__libtoolize}
-#libtoolize --force --copy
 %{__aclocal}
 %{__automake}
 %{__autoconf}
