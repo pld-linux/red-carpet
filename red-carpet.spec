@@ -22,7 +22,6 @@ BuildRequires:	rpm-devel >= 4.0
 BuildRequires:	db3-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 Software update utility and manager
