@@ -15,7 +15,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	libxslt-devel >= 1.0.30
-BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-pygtk-devel >= 2.0.0
 BuildRequires:	scrollkeeper >= 0.3.12
 Requires:	python-pygtk-gtk >= 2.0.0
