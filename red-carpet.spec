@@ -1,4 +1,4 @@
-%define		snap	20030914
+%define		snap	20030917
 
 Summary:	Software update utility and manager
 Summary(pl):	Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
@@ -8,9 +8,8 @@ Release:	%{snap}.1
 License:	GPL
 Group:		X11/Applications
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5:	715a37461a862c72179001690f9884fe
-Patch0:		%{name}-python-version.patch
-Patch1:		%{name}-desktop.patch
+# Source0-md5:	6d766c4f4a02c22e9b35da58af480b37
+Patch0:		%{name}-desktop.patch
 URL:		http://ximian.com/apps/redcarpet.php3
 BuildRequires:	python-devel >= 2.3
 BuildRequires:	python-pygtk-devel >= 2.0.0
@@ -29,7 +28,6 @@ Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 %prep
 %setup -q -n %{name}
 %patch0 -p1
-%patch1 -p1
 
 %build
 glib-gettextize
