@@ -5,8 +5,6 @@ Version:	0.9
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(pl):	X11/Aplikacje
 Source0:	ftp://ftp.ximian.com:/pub/red-carpet/source/%{name}-%{version}.tar.gz
 URL:		http://ximian.com/apps/redcarpet.php3
 BuildRequires:	gnome-libs-devel >= 1.0.54
