@@ -31,3 +31,15 @@ diff -Nuard red-carpet.orig/red_extra/Makefile.am red-carpet/red_extra/Makefile.
  pkgpythondir = $(pythondir)/gtk-2.0
  pkgpyexecdir = $(pythondir)/gtk-2.0
  
+diff -Nuard red-carpet.orig/src/red_depcomponent.py red-carpet/src/red_depcomponent.py
+--- red-carpet.orig/src/red_depcomponent.py	2003-05-15 22:05:20.000000000 +0200
++++ red-carpet/src/red_depcomponent.py	2003-09-14 17:12:25.000000000 +0200
+@@ -41,7 +41,7 @@
+     return map(filter_dep, dep_list)
+ 
+ 
+-class DepComponent(gobject.GObject, red_component.Component):
++class DepComponent(red_component.Component):
+ 
+     def __init__(self, install_packages=[], remove_packages=[], verify=0):
+         gobject.GObject.__init__(self)
