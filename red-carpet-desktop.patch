@@ -1,0 +1,11 @@
+diff -Nuard red-carpet.orig/red-carpet.desktop red-carpet/red-carpet.desktop
+--- red-carpet.orig/red-carpet.desktop	2003-02-25 22:16:55.000000000 +0100
++++ red-carpet/red-carpet.desktop	2003-09-14 17:44:44.000000000 +0200
+@@ -5,4 +5,4 @@
+ Exec=red-carpet
+ Icon=red-carpet.png
+ Type=Application
+-Categories=GTK;PackageManager;System;
+\ Brak znaku nowej linii na koñcu pliku
++Categories=GNOME;Application;Utility;
+\ Brak znaku nowej linii na koñcu pliku
