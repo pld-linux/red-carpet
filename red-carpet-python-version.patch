@@ -1,0 +1,33 @@
+diff -Nuard red-carpet.orig/configure.in red-carpet/configure.in
+--- red-carpet.orig/configure.in	2003-09-05 21:19:01.000000000 +0200
++++ red-carpet/configure.in	2003-09-14 16:38:46.000000000 +0200
+@@ -76,7 +76,7 @@
+ PYTHON_PREFIX=`$PYTHON -c "import sys; print sys.prefix"`
+ AC_SUBST(PYTHON_PREFIX)
+ 
+-PYTHON_INCLUDES=-I$PYTHON_PREFIX/include/python2.2
++PYTHON_INCLUDES=-I$PYTHON_PREFIX/include/python2.3
+ AC_SUBST(PYTHON_INCLUDES)
+ 
+ PKG_CHECK_MODULES(GTK, gtk+-2.0)
+@@ -98,7 +98,7 @@
+ PYGTK_CODEGEN=$PYGTK_PREFIX/bin/pygtk-codegen-2.0
+ AC_SUBST(PYGTK_CODEGEN)
+ 
+-PYGTK_IMPORTDIR=$PYGTK_PREFIX/lib/python2.2/site-packages
++PYGTK_IMPORTDIR=$PYGTK_PREFIX/lib/python2.3/site-packages
+ AC_SUBST(PYGTK_IMPORTDIR)
+ 
+ dnl **************************************************************************
+diff -Nuard red-carpet.orig/red_extra/Makefile.am red-carpet/red_extra/Makefile.am
+--- red-carpet.orig/red_extra/Makefile.am	2003-02-07 16:53:55.000000000 +0100
++++ red-carpet/red_extra/Makefile.am	2003-09-14 16:38:52.000000000 +0200
+@@ -8,7 +8,7 @@
+ 
+ EXTRA_DIST = $(defs_DATA)
+ 
+-pythondir=$(PYGTK_PREFIX)/lib/python2.2
++pythondir=$(PYGTK_PREFIX)/lib/python2.3
+ pkgpythondir = $(pythondir)/gtk-2.0
+ pkgpyexecdir = $(pythondir)/gtk-2.0
+ 
