@@ -1,26 +1,24 @@
+
+# TODO : building, but not working... python guru need
+
+%define		snap	20030914
+
 Summary:	Software update utility and manager
 Summary(pl):	Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 Name:		red-carpet
-Version:	0.9
-Release:	1
+Version:	2.0.3
+Release:	%{snap}.0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.ximian.com:/pub/red-carpet/source/%{name}-%{version}.tar.gz
-# Source0-md5:	34511faa380a3a33270db572458ecc1d
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+# Source0-md5:	715a37461a862c72179001690f9884fe
+Patch0:		%{name}-python-version.patch
 URL:		http://ximian.com/apps/redcarpet.php3
-BuildRequires:	gnome-libs-devel >= 1.0.54
-BuildRequires:	gtkhtml-devel
-BuildRequires:	gtk+-devel >= 1.2.0
-BuildRequires:	libglade
-BuildRequires:	gnome-print-devel
-BuildRequires:	zlib-devel
-BuildRequires:	bzip2-devel
-BuildRequires:	popt-devel
-BuildRequires:	libxml-devel
-BuildRequires:	gnet-devel >= 1.0.4
-BuildRequires:	gal-devel
-BuildRequires:	rpm-devel >= 4.0
-BuildRequires:	db3-devel
+BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-pygtk-devel >= 2.0.0
+BuildRequires:	scrollkeeper >= 0.3.12
+BuildRequires:	libxslt-devel >= 1.0.30
+Requires:	python-pygtk-gtk >= 2.0.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -31,14 +29,21 @@ Software update utility and manager
 Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
 
 %prep
-%setup -q
+%setup -q -n %{name}
+%patch0 -p1
 
 %build
-RPM_PREFIX=/usr; export RPM_PREFIX
-%configure \
-	--with-rpm-prefix \
-	--enable-backend-rpm4=yes \
-	--enable-console-helper=yes \
+#touch aclocal.m4
+glib-gettextize
+#chmod u+w aclocal.m4
+%{__libtoolize}
+#libtoolize --force --copy
+%{__aclocal}
+%{__automake}
+%{__autoconf}
+
+%configure 
+#	--enable-standalone
 
 %{__make}
 
@@ -48,13 +53,19 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+%find_lang %{name} --with-gnome --all-name
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS BUGS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README HACKING
 %attr(755,root,root) %{_bindir}/*
-!!FIXME!!
-%{_pixmapsdir}/*
+%{_libdir}/%{name}/*.so
+%{_libdir}/%{name}/red_extra/*
+%{_pixmapsdir}/%{name}/*
+%{_pixmapsdir}/*.png
+%{_datadir}/%{name}/*
+%{_desktopdir}/*
+%{_omf_dest_dir}/%{name}
