@@ -43,3 +43,32 @@ diff -Nuard red-carpet.orig/src/red_depcomponent.py red-carpet/src/red_depcompon
  
      def __init__(self, install_packages=[], remove_packages=[], verify=0):
          gobject.GObject.__init__(self)
+diff -Nuard red-carpet.orig/src/red_settings.py red-carpet/src/red_settings.py
+--- red-carpet.orig/src/red_settings.py	2003-04-01 20:16:46.000000000 +0200
++++ red-carpet/src/red_settings.py	2003-09-15 01:23:26.000000000 +0200
+@@ -61,6 +61,16 @@
+ 
+         return self.__public.get(section, option)
+ 
++    def getboolean(self, path):
++        section, option, default = self.parse_path(path)
++        if not self.__public.has_section(section) or \
++           not self.__public.has_option(section, option):
++            if default:
++                return default
++            return ""
++
++        return self.__public.getboolean(section, option)
++
+     def set(self, path, value):
+         section, option, default = self.parse_path(path)
+         if not self.__public.has_section(section):
+@@ -140,7 +150,7 @@
+         if os.environ.has_key("USER"):
+             user_path += "=" + os.environ["USER"]
+ 
+-        self.local =    int(config.get("daemon/local=1"))
++        self.local =    config.getboolean("daemon/local=1")
+         self.user =     config.get(user_path)
+         self.password = config.get_private("daemon/pass")
+ 
