@@ -66,5 +66,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_pixmapsdir}/%{name}
 %{_pixmapsdir}/*.png
 %{_datadir}/%{name}
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_omf_dest_dir}/%{name}
