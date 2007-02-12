@@ -1,5 +1,5 @@
 Summary:	Software update utility and manager
-Summary(pl.UTF-8):   Narzędzie do aktualizacji i zarządzania oprogramowaniem
+Summary(pl.UTF-8):	Narzędzie do aktualizacji i zarządzania oprogramowaniem
 Name:		red-carpet
 Version:	2.2.3
 Release:	0.1
