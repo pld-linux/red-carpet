@@ -1,5 +1,5 @@
 Summary:	Software update utility and manager
-Summary(pl):	Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem
+Summary(pl.UTF-8):   NarzÄ™dzie do aktualizacji i zarzÄ…dzania oprogramowaniem
 Name:		red-carpet
 Version:	2.2.3
 Release:	0.1
@@ -23,8 +23,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Software update utility and manager.
 
-%description -l pl
-Narzêdzie do aktualizacji i zarz±dzania oprogramowaniem.
+%description -l pl.UTF-8
+NarzÄ™dzie do aktualizacji i zarzÄ…dzania oprogramowaniem.
 
 %prep
 %setup -q
