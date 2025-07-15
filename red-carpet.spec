@@ -28,8 +28,8 @@ Narzędzie do aktualizacji i zarządzania oprogramowaniem.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 mv po/{no,nb}.po
 
